@@ -1,0 +1,28 @@
+# Binaries
+/toolgraph
+/toolgraph.exe
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test artifacts
+*.test
+*.out
+coverage.out
+
+# Go workspace / vendor
+/vendor/
+go.work
+go.work.sum
+
+# Local registry produced at runtime (the canonical seed lives in examples/)
+/toolgraph.json
+*.tmp
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp

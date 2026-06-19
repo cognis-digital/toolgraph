@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "tools": [
+    {
+      "name": "nmap",
+      "category": "network-scanning",
+      "language": "C",
+      "url": "https://nmap.org",
+      "tags": ["discovery", "network", "ports", "recon"]
+    },
+    {
+      "name": "masscan",
+      "category": "network-scanning",
+      "language": "C",
+      "url": "https://github.com/robertdavidgraham/masscan",
+      "tags": ["fast", "network", "ports"]
+    },
+    {
+      "name": "rustscan",
+      "category": "network-scanning",
+      "language": "Rust",
+      "url": "https://github.com/RustScan/RustScan",
+      "tags": ["fast", "network", "ports"]
+    },
+    {
+      "name": "wireshark",
+      "category": "traffic-analysis",
+      "language": "C",
+      "url": "https://www.wireshark.org",
+      "tags": ["forensics", "network", "pcap"]
+    },
+    {
+      "name": "tshark",
+      "category": "traffic-analysis",
+      "language": "C",
+      "url": "https://www.wireshark.org/docs/man-pages/tshark.html",
+      "tags": ["cli", "network", "pcap"]
+    },
+    {
+      "name": "zeek",
+      "category": "traffic-analysis",
+      "language": "C++",
+      "url": "https://zeek.org",
+      "tags": ["ids", "monitoring", "network"]
+    },
+    {
+      "name": "suricata",
+      "category": "intrusion-detection",
+      "language": "C",
+      "url": "https://suricata.io",
+      "tags": ["ids", "ips", "network"]
+    },
+    {
+      "name": "snort",
+      "category": "intrusion-detection",
+      "language": "C",
+      "url": "https://www.snort.org",
+      "tags": ["ids", "ips", "network"]
+    },
+    {
+      "name": "theharvester",
+      "category": "osint",
+      "language": "Python",
+      "url": "https://github.com/laramies/theHarvester",
+      "tags": ["email", "footprint", "recon"]
+    },
+    {
+      "name": "amass",
+      "category": "osint",
+      "language": "Go",
+      "url": "https://github.com/owasp-amass/amass",
+      "tags": ["dns", "footprint", "subdomains"]
+    },
+    {
+      "name": "subfinder",
+      "category": "osint",
+      "language": "Go",
+      "url": "https://github.com/projectdiscovery/subfinder",
+      "tags": ["dns", "passive", "subdomains"]
+    },
+    {
+      "name": "spiderfoot",
+      "category": "osint",
+      "language": "Python",
+      "url": "https://www.spiderfoot.net",
+      "tags": ["automation", "footprint", "recon"]
+    },
+    {
+      "name": "sqlmap",
+      "category": "web-testing",
+      "language": "Python",
+      "url": "https://sqlmap.org",
+      "tags": ["database", "injection", "web"]
+    },
+    {
+      "name": "zaproxy",
+      "category": "web-testing",
+      "language": "Java",
+      "url": "https://www.zaproxy.org",
+      "tags": ["proxy", "scanner", "web"]
+    }
+  ],
+  "relations": [
+    { "from": "masscan", "to": "nmap", "relation": "alternative-to" },
+    { "from": "rustscan", "to": "nmap", "relation": "alternative-to" },
+    { "from": "tshark", "to": "wireshark", "relation": "alternative-to" },
+    { "from": "snort", "to": "suricata", "relation": "alternative-to" },
+    { "from": "subfinder", "to": "amass", "relation": "alternative-to" },
+    { "from": "zeek", "to": "wireshark", "relation": "complements" },
+    { "from": "suricata", "to": "zeek", "relation": "complements" },
+    { "from": "amass", "to": "subfinder", "relation": "complements" },
+    { "from": "theharvester", "to": "amass", "relation": "complements" },
+    { "from": "spiderfoot", "to": "theharvester", "relation": "complements" },
+    { "from": "tshark", "to": "wireshark", "relation": "depends-on" }
+  ]
+}
