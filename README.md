@@ -13,6 +13,41 @@ by hand.
 Built by Cognis Digital. Standard library only, no external dependencies.
 Defensive and analytical use only.
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+  "nodes": [
+    {
+      "id": "node1",
+      "label": "Node A",
+      "shape": "box",
+      "color": "#FF69B4"
+    },
+    {
+      "id": "node2",
+      "label": "Node B",
+      "shape": "ellipse",
+      "color": "#34A85A"
+    }
+  ],
+  "edges": [
+    {
+      "from": "node1",
+      "to": "node2",
+      "label": "Edge A",
+      "color": "#FFC107"
+    }
+  ]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Install
 
 ```sh
